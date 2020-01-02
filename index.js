@@ -8,7 +8,7 @@ const page = fs.readFileSync('index.html')
 
 
 const server = http.createServer((request, response) => {
-  const getLocalExternalIp = () => [].concat.apply([], Object.values(networkInterfaces()))
+  const getLocalExternalIp = [].concat.apply([], Object.values(networkInterfaces()))
     .filter(details => details.family === 'IPv4' && !details.internal)
     .pop().address
 
